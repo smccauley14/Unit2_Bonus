@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     public float xRange = 10;
 
-    public GameObject cookiePrefab;
+    public GameObject foodPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space)) 
         {
-            Instantiate(cookiePrefab, transform.position, cookiePrefab.transform.rotation);
+            Instantiate(foodPrefab, transform.position, foodPrefab.transform.rotation);
         }
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
