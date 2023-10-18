@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float yMinRange = 0;
 
     public GameObject foodPrefab;
+    public Transform projectileSpawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            Instantiate(foodPrefab, transform.position, foodPrefab.transform.rotation);
+            Instantiate(foodPrefab, projectileSpawnPoint.position, foodPrefab.transform.rotation);
         }
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
