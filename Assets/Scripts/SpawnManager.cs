@@ -20,11 +20,6 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating(nameof(SpawnRightAnimal), 3, spawnInterval);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     void SpawnRandomAnimal()
     {
         Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnRangeY);
