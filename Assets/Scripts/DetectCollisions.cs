@@ -17,11 +17,11 @@ public class DetectCollisions : MonoBehaviour
             manager.UpdateLives(-1);
             Destroy(gameObject);
         }
-        else
+        else if (other.CompareTag("Animal") && gameObject.CompareTag("Food"))
         {
-            manager.AddScore(5);
-            Destroy(gameObject);
-            Destroy(other.gameObject); 
+            other.GetComponent<Hunger>().FeedAnimal(1);
+            Destroy(gameObject); 
+            
         }
          
     }
